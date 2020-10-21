@@ -49,10 +49,10 @@ public class Helicopter extends Airplane {
      * @param creationYear int for creation year
      * @param passengerCapacity int for passenger capacity
      */
-    public Helicopter(String brand, double price, int horsePower, int cyclinders, int creationYear,
+    public Helicopter(String brand, double price, int horsePower, int cylinders, int creationYear,
             int passengerCapacity) {
         super(brand, price, horsePower);
-        this.cylinders = cyclinders;
+        this.cylinders = cylinders;
         this.creationYear = creationYear;
         this.passengerCapacity = passengerCapacity;
     }
@@ -65,7 +65,7 @@ public class Helicopter extends Airplane {
         super(object.getBrand(), object.getPrice(), object.getHorsePower());
         this.cylinders = object.getCylinders();
         this.creationYear = object.getCreationYear();
-        this.passengerCapacity = object.getCreationYear();
+        this.passengerCapacity = object.getPassengerCapacity();
     }
 
     // mutator methods
@@ -135,6 +135,16 @@ public class Helicopter extends Airplane {
     public boolean equals(Helicopter object) {
         return super.equals(object) && this.cylinders == object.cylinders && this.creationYear == object.creationYear
                 && this.passengerCapacity == object.passengerCapacity;
+    }
+
+    
+    /** 
+     * @param object object being copied
+     * @return Helicopter
+     */
+    public Helicopter copy(Helicopter object){
+        Helicopter temp = new Helicopter(object);
+        return temp;
     }
 
 }

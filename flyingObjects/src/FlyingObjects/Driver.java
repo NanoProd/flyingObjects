@@ -23,6 +23,23 @@ import Uav.*;
 public class Driver {
 
 
+     
+     /** 
+      * @param array
+      * @return FlyingObjects[]
+      */
+     public static FlyingObjects[] copyFlyingObjects(FlyingObjects[] array){
+       FlyingObjects[] copyFlyObj = new FlyingObjects[array.length];
+       for(int i=0;i<copyFlyObj.length;i++){
+           copyFlyObj[i] = array[i].copy(array[i]);
+       }
+       return copyFlyObj;
+   }
+
+        
+        /** 
+         * @param args
+         */
         public static void main(String[] args) {
 
 
@@ -77,24 +94,56 @@ public class Driver {
         array[19] = agri3;
         array[20] = uav3; 
 
-
+    //test toString method
     for(int i=0; i<21; i++){
-
-                    System.out.println();
+            System.out.println();
             System.out.println(array[i].toString());
             System.out.println();
         }
 
-    for(int i=0; i<21; i++){
-        for(int j = 21; j <= 0; j--){
-            if(array[i].equals(array[j])){
-                System.out.println("Objects " + i + "and " + j + " are equal" );
-            } else {
-                System.out.println("They are not equal");
-            }
-               
-            }
+    //test equals method
+    System.out.println(mav2.equals(mav3));
+    System.out.println(airplane2.equals(airplane3));
+    System.out.println(heli2.equals(heli3));
+    System.out.println(quad2.equals(quad3));
+    System.out.println(multi2.equals(multi3));
+    System.out.println(agri2.equals(agri3));
+    System.out.println(uav2.equals(uav3));
+    
+
+
+
+        
+        FlyingObjects[] array2;
+        array2 = copyFlyingObjects(array);
+
+        for(int i = 0; i < 21; i++){
+            System.out.println();
+            System.out.println(array2[i].toString());
+            System.out.println();
         }
+
+    /*
+        Explanation for phase 2:
+
+        Without using the clone method, we cannot create a deep copy of the objects with the proper class types. 
+        Instead, when we call the array2[i] to string method, it automatically thinks every object is of the FlyingObjects class.
+        Hence, does not have access to the overriden toString() methods in each subclass.
+
+        To demonstrate:
+    */
+    /*
+    Run this code for demonstration:
+    
+    System.out.println(array2[0].getClass());
+    System.out.println(array2[1].getClass());
+    System.out.println(array2[2].getClass());
+    System.out.println(array2[3].getClass());
+
+
+    */
+
+        
     }
 
 }

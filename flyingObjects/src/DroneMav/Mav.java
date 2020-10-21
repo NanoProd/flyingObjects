@@ -112,4 +112,14 @@ public class Mav extends Uav {
     public boolean equals(Mav object) {
         return super.equals(object) && this.model == object.model && this.size == object.size;
     }
+
+    
+    /** 
+     * @param object object being copied
+     * @return Mav
+     */
+    public Mav copy(Mav object){
+        Mav temp = new Mav(object);
+        return temp;
+    }
 }

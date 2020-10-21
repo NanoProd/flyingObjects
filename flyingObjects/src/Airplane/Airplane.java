@@ -114,8 +114,8 @@ public class Airplane extends FlyingObjects {
      * @return String
      */
     public String toString() {
-        return "This Airplane is made by" +
-        this.brand + ", it has " + this.horsePower + " horsepower and costs" + this.price;
+        return "This Airplane is made by " +
+        this.brand + ", it has " + this.horsePower + " horsepower and costs " + this.price;
     }
 
     /**
@@ -126,4 +126,14 @@ public class Airplane extends FlyingObjects {
         return this.brand == object.brand && this.price == object.price && this.horsePower == object.horsePower;
     }
 
+
+    
+    /** 
+     * @param object object being copied
+     * @return Airplane
+     */
+    public Airplane copy(Airplane object){
+        Airplane temp = new Airplane(object);
+        return temp;
+    }
 }

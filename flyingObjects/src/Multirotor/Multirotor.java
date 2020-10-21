@@ -97,4 +97,14 @@ public class Multirotor extends Helicopter {
         return super.equals(object) && this.numberOfRotors == object.numberOfRotors;
     }
 
+     
+     /** 
+      * @param object object being copied
+      * @return Multirotor
+      */
+     public Multirotor copy(Multirotor object){
+        Multirotor temp = new Multirotor(object);
+        return temp;
+    }
+
 }

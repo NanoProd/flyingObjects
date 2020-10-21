@@ -109,4 +109,14 @@ public class AgricultureDrone extends Uav {
         return super.equals(object) && this.brand == object.brand && this.size == object.size;
     }
 
+       
+       /** 
+        * @param object object being copied
+        * @return AgricultureDrone
+        */
+       public AgricultureDrone copy(AgricultureDrone object){
+        AgricultureDrone temp = new AgricultureDrone(object);
+        return temp;
+    }
+
 }

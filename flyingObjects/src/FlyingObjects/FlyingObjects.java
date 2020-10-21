@@ -16,4 +16,35 @@ package FlyingObjects;
 //base class
 public class FlyingObjects {
 
+    /**
+     * default constructor
+     */
+    public FlyingObjects(){
+
+    }
+    /**
+     * Copy constructor
+     * @param object object being copied
+     */
+    public FlyingObjects(FlyingObjects object){
+        
+    }
+    
+    /** 
+     * @param object object being copied
+     * @return FlyingObjects
+     */
+    public FlyingObjects copy(FlyingObjects object){
+        FlyingObjects temp = new FlyingObjects(object);
+        return temp;
+    }
+    
+
+    
+    /** 
+     * @return String
+     */
+    public String toString(){
+        return "FlyingObject to string method";
+    }
 }

@@ -108,4 +108,14 @@ public class Uav extends FlyingObjects {
     public boolean equals(Uav object) {
         return this.weight == object.weight && this.price == object.price;
     }
+
+     
+     /** 
+      * @param object object being copied
+      * @return Uav
+      */
+     public Uav copy(Uav object){
+        Uav temp = new Uav(object);
+        return temp;
+    }
 }

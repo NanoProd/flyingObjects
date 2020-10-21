@@ -99,4 +99,24 @@ public class Quadcopter extends Helicopter {
         return super.equals(object) && this.maxFlyingSpeed == object.maxFlyingSpeed;
     }
 
+    
+
+
+
+    
+    /** 
+     * @param object object being copied
+     * @return Quadcopter
+     */
+    public Quadcopter copy(Quadcopter object){
+        Quadcopter temp = new Quadcopter(object);
+        return temp;
+    }
+
+
+
+
+
+
 }
+
