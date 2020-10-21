@@ -93,9 +93,16 @@ public class Quadcopter extends Helicopter {
     /**
      * equals method
      * Compares to Quadcopter objects and returns true if all attributes are the same. 
+     * @param object Quadcopter object being copied
      * @return boolean
      */
     public boolean equals(Quadcopter object) {
+        if(object == null){
+            return false;
+        }
+        if(object.getClass() != this.getClass()){
+            return false;
+        }
         return super.equals(object) && this.maxFlyingSpeed == object.maxFlyingSpeed;
     }
 

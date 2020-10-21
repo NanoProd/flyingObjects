@@ -110,7 +110,14 @@ public class Mav extends Uav {
      * @return boolean 
      */
     public boolean equals(Mav object) {
-        return super.equals(object) && this.model == object.model && this.size == object.size;
+        if(object == null){
+            return false;
+        } else if(object.getClass() != this.getClass()){
+            return false;
+        } else{
+            return super.equals(object) && this.model == object.model && this.size == object.size;
+        }
+
     }
 
     

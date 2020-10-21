@@ -120,10 +120,18 @@ public class Airplane extends FlyingObjects {
 
     /**
      * Compares to Airplane objects and returns true if all attributes are the same.
+     * @param object Airplane object being compared to
      * @return boolean
      */
     public boolean equals(Airplane object) {
-        return this.brand == object.brand && this.price == object.price && this.horsePower == object.horsePower;
+        if(object == null){
+            return false;
+        } else if(object.getClass() != this.getClass()){
+            return false;
+        } else{
+            return this.brand == object.brand && this.price == object.price && this.horsePower == object.horsePower;
+        }
+
     }
 
 

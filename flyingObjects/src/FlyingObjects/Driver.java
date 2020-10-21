@@ -25,7 +25,7 @@ public class Driver {
 
      
      /** 
-      * @param array
+      * @param array array being copied
       * @return FlyingObjects[]
       */
      public static FlyingObjects[] copyFlyingObjects(FlyingObjects[] array){
@@ -38,7 +38,7 @@ public class Driver {
 
         
         /** 
-         * @param args
+         * @param args standard main method decleration
          */
         public static void main(String[] args) {
 
@@ -143,6 +143,8 @@ public class Driver {
 
     */
 
+       //closing message
+     System.out.println("Thank you for using our project.");
         
     }
 

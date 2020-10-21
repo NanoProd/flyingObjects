@@ -94,6 +94,12 @@ public class Multirotor extends Helicopter {
      * @return boolean
      */
     public boolean equals(Multirotor object) {
+        if(object == null){
+            return false;
+        }
+        if(object.getClass() != this.getClass()){
+            return false;
+        }
         return super.equals(object) && this.numberOfRotors == object.numberOfRotors;
     }
 

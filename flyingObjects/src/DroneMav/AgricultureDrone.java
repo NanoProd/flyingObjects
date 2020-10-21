@@ -106,6 +106,12 @@ public class AgricultureDrone extends Uav {
      * @return boolean
      */
     public boolean equals(AgricultureDrone object) {
+        if(object == null){
+            return false;
+        }
+        if(object.getClass() != this.getClass()){
+            return false;
+        }
         return super.equals(object) && this.brand == object.brand && this.size == object.size;
     }
 

@@ -1,0 +1,150 @@
+//-------------------------------------------------
+//Assignment 2
+// Part 1, Phase 1
+//Written by: Joshua-James Nantel-Ouimet (#40131733)
+//            Samaninder Singh (#40133493)
+//-------------------------------------------------
+
+/**
+ * This class allows the user to create Helicopter objects, it is part of the Copter package.
+ * @author Joshua-James Nantel-Ouimet
+ * @author Samaninder Singh 
+ * @version 1.0
+ */
+package Copter;
+import Airplane.*;
+
+public class Helicopter extends Airplane {
+    // attribrutes
+    /**
+     * Helicopter cyclinders
+     */
+    private int cylinders;
+    /**
+     * Helicopter creation year
+     */
+    private int creationYear;
+    /**
+     * Helicopter passenger capacity
+     */
+    private int passengerCapacity;
+
+    /**
+     * default constructor
+     * sets values to 0 or empty string
+     */
+    public Helicopter() {
+        super();
+        cylinders = 0;
+        creationYear = 0;
+        passengerCapacity = 0;
+    }
+
+    /**
+     * parametrized constructor
+     * @param brand String for brand
+     * @param price double for price
+     * @param horsePower int for horse power
+     * @param cylinders int for quantity of cylinders
+     * @param creationYear int for creation year
+     * @param passengerCapacity int for passenger capacity
+     */
+    public Helicopter(String brand, double price, int horsePower, int cylinders, int creationYear,
+            int passengerCapacity) {
+        super(brand, price, horsePower);
+        this.cylinders = cylinders;
+        this.creationYear = creationYear;
+        this.passengerCapacity = passengerCapacity;
+    }
+    
+    /**
+     * copy constructor
+     * Helicopter objects that attributes will be copied from.
+     */
+    public Helicopter(Helicopter object) {
+        super(object.getBrand(), object.getPrice(), object.getHorsePower());
+        this.cylinders = object.getCylinders();
+        this.creationYear = object.getCreationYear();
+        this.passengerCapacity = object.getPassengerCapacity();
+    }
+
+    // mutator methods
+    /**
+     * sets number of cylinders
+     * 
+     * @param cylinders int for number of cylinders
+     */
+    public void setCylinders(int cylinders) {
+        this.cylinders = cylinders;
+    }
+
+    /**
+     * sets creation Year
+     * @param creationYear int creation year
+     */
+    public void setCreationYear(int creationYear) {
+        this.creationYear = creationYear;
+    }
+
+    /**
+     * sets passenger capacity
+     * @param passengerCapacity int for passenger capacity
+     */
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
+
+    // accessor methods
+    /**
+     * returns cylinder quantity
+     * @return int
+     */
+    public int getCylinders() {
+        return cylinders;
+    }
+    /**
+     * returns creation year
+     * @return int
+     */
+    public int getCreationYear() {
+        return creationYear;
+    }
+    /**
+     * returns passenger capacity
+     * @return int
+     */
+    public int getPassengerCapacity() {
+        return passengerCapacity;
+    }
+    /**
+     * To string method that displays Helicopter information
+     * @return String
+     */
+    public String toString() {
+        return "This helicopter is made by " + this.getBrand() +
+            ", it has " + this.getHorsePower() + " horse power,  " +
+             this.cylinders + " cyclinders, it was made in " +
+             this.creationYear + " and costs" + this.getPrice();  
+    }
+    
+    /**
+     * Compares to Helicopter objects and returns true if all attributes are the same.
+     * @return boolean
+     */
+    public boolean equals(Helicopter object) {
+        return super.equals(object) && this.cylinders == object.cylinders && this.creationYear == object.creationYear
+                && this.passengerCapacity == object.passengerCapacity;
+    }
+
+    
+    /** 
+     * @param object object being copied
+     * @return Helicopter
+     */
+    public Helicopter copy(Helicopter object){
+        Helicopter temp = new Helicopter(object);
+        return temp;
+    }
+
+}

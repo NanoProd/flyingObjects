@@ -45,7 +45,7 @@ public class Helicopter extends Airplane {
      * @param brand String for brand
      * @param price double for price
      * @param horsePower int for horse power
-     * @param cyclinders int for quantity of cylinders
+     * @param cylinders int for quantity of cylinders
      * @param creationYear int for creation year
      * @param passengerCapacity int for passenger capacity
      */
@@ -60,6 +60,7 @@ public class Helicopter extends Airplane {
     /**
      * copy constructor
      * Helicopter objects that attributes will be copied from.
+     * @param object object being copied
      */
     public Helicopter(Helicopter object) {
         super(object.getBrand(), object.getPrice(), object.getHorsePower());
@@ -130,9 +131,16 @@ public class Helicopter extends Airplane {
     
     /**
      * Compares to Helicopter objects and returns true if all attributes are the same.
+     * @param object object being compared to
      * @return boolean
      */
     public boolean equals(Helicopter object) {
+        if(object == null){
+            return false;
+        }
+        if(object.getClass() != this.getClass()){
+            return false;
+        }
         return super.equals(object) && this.cylinders == object.cylinders && this.creationYear == object.creationYear
                 && this.passengerCapacity == object.passengerCapacity;
     }

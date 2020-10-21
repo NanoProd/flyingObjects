@@ -106,6 +106,12 @@ public class Uav extends FlyingObjects {
      * @return boolean
      */
     public boolean equals(Uav object) {
+        if(object == null){
+            return false;
+        }
+        if(object.getClass() != this.getClass()){
+            return false;
+        }
         return this.weight == object.weight && this.price == object.price;
     }
 
