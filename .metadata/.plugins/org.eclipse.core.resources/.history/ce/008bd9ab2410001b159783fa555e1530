@@ -1,0 +1,4 @@
+package flyingObjects;
+
+public class Multirotor extends Helicopter {
+ }
