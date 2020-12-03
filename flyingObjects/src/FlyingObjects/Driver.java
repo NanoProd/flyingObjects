@@ -132,8 +132,8 @@ public class Driver {
 
         To demonstrate:
     */
-    /*
-    Run this code for demonstration:
+   
+
     
     System.out.println(array2[0].getClass());
     System.out.println(array2[1].getClass());
@@ -141,7 +141,7 @@ public class Driver {
     System.out.println(array2[3].getClass());
 
 
-    */
+   
 
        //closing message
      System.out.println("Thank you for using our project.");
